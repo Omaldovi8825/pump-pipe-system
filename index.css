@@ -112,6 +112,18 @@ input {
     visibility: hidden;
 }
 
+.espuma {
+    position: absolute;
+    bottom: 253px;
+    right: 134px;
+    width: 100px;
+    height: 15px;
+    background-color: transparent;
+    box-shadow: 0px -20px 26px white;
+    animation: espuma 1s linear infinite;
+    visibility: hidden;
+}
+
 .manguera {
     position: absolute;
     left: 14px;
@@ -208,12 +220,12 @@ input {
     }
 }
 
-@keyframes shower {
+@keyframes espuma {
     0%, 100% {
-        opacity: 1;
+        height: 15px;
     }
 
     50% {
-        opacity: .5;
+        height: 12px;
     }
 }

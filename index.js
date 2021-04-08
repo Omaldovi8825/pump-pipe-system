@@ -10,6 +10,7 @@ let pow = document.querySelector("#power")
 let eta = document.querySelector("#eta")
 let reynolds = document.querySelector("#reynolds")
 let shower = document.querySelector(".shower")
+let espuma = document.querySelector(".espuma")
 
 //eventos
 descargaInput.addEventListener("input", () => {
@@ -41,9 +42,11 @@ function showerChange(descarga){
     if(ht > pumpHead || descarga == 0){
         shower.style.opacity = "0"
         shower.style.clipPath = `polygon(42% 0%, 58% 0%, 58% 100%, 42% 100%)`
+        espuma.style.visibility = "hidden"
     } else {
         shower.style.opacity = "1"
         shower.style.clipPath = `polygon(42% 0%, 58% 0%, ${x}% 100%, ${y}% 100%)`
+        espuma.style.visibility = "visible"
     }
 }
 
