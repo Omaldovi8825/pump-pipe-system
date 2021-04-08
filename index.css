@@ -1,0 +1,219 @@
+:root {
+    --pipeHeight: 15px;
+    --pipeRadius: 10px;
+    --water: #045de9;
+    --margins: 15px;
+    --waterTexture: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+    --metallicTexture: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
+    --metallicPipe: linear-gradient(181deg, #e9bcb7 0%, #29524a 74%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 2px;
+    width: 70px;
+    text-align: center;
+    outline: none;
+    color: white;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    margin: 10px auto 10px;
+    background-color: black;
+    position: relative;
+    color: white;
+}
+
+.lake {
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--water);
+    background-image: var(--waterTexture);
+    animation: waves 4s linear infinite;
+}
+
+.pipe {
+    height: var(--pipeHeight);
+    background-image: var(--metallicPipe);
+    position: absolute;
+}
+
+.pipe1 {
+    width: 200px;
+    bottom: 180px;
+    left: 70px;
+}
+
+.pipe2 {
+    width: 200px;
+    bottom: 272px;
+    left: 178px;
+    transform: rotate(90deg);
+    border-top-right-radius: var(--pipeRadius);
+}
+
+.pipe3 {
+    width: 154px;
+    bottom: 380px;
+    left: 271px;
+    border-top-left-radius: var(--pipeRadius);
+    border-top-right-radius: var(--pipeRadius);
+}
+
+.pump {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 164px;
+    left: 50px;
+    background-image: var(--metallicTexture);
+    border-radius: 50%;
+    animation: rotation .5s linear infinite;
+}
+
+.basket {
+    position: absolute;
+    bottom: 168px;
+    right: 133px;
+    width: 100px;
+    height: 100px;
+    background-image: var(--metallicTexture);
+    clip-path: polygon(0 0, 100% 0, 71% 100%, 31% 100%);
+}
+
+.shower {
+    position: absolute;
+    background-color: var(--water);
+    background-image: var(--waterTexture);
+    width: 101px;
+    height: 112px;
+    bottom: 268px;
+    right: 132px;
+    transition: 1.5s;
+    opacity: 0;
+}
+
+.bucket {
+    position: absolute;
+    bottom: 159px;
+    right: 115px;
+    width: 129px;
+    visibility: hidden;
+}
+
+.manguera {
+    position: absolute;
+    left: 14px;
+    bottom: 102px;
+    width: 120px;
+    height: 5px;
+    background-color: #ffffff7a;
+    transform: rotate(90deg);
+}
+
+.inputs {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 200px;
+    position: absolute;
+    left: 27px;
+    top: 25px;
+}
+
+.outputs {
+    position: absolute;
+    top: var(--margins);
+    right: var(--margins);
+    /* border: 1px solid white; */
+    width: 160px;
+    height: 117px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.divisor { 
+    width: 100%;
+    height: 166px;
+    background-color: #ffffff21;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid gray;
+}
+
+.altura {
+    position: absolute;
+    bottom: 297px;
+    left: 144px;
+    width: 189px;
+    height: 1px;
+    background-color: white;
+    transform: rotate(90deg);
+}
+
+.valor-altura {
+    position: absolute;
+    bottom: 287px;
+    right: 374px;
+}
+
+#descarga {
+    width: 120px;
+}
+
+#calcular {
+    background-color: black;
+}
+
+#rough-t {
+    position: absolute;
+    bottom: 9px;
+    right: 9px;
+}
+
+#main-title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes waves {
+    0%, 100% {
+        clip-path: polygon(0 13%, 10% 5%, 23% 0, 34% 2%, 45% 5%, 56% 10%, 66% 11%, 77% 4%, 87% 0, 100% 11%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 0, 9% 12%, 19% 16%, 29% 16%, 41% 9%, 54% 5%, 65% 10%, 75% 14%, 87% 15%, 100% 3%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shower {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}

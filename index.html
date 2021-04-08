@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h3 id="main-title">CENV2008 Hydraulics, University of Southampton</h3>
+   <div class="container">
+       <div class="inputs">
+           <div>
+               <label for="diametro">D</label>
+               <input type="number" name="diametro" id="diametro" value="300">
+               <span>mm</span>
+           </div>
+           <div>
+               <label for="longitud">L</label>
+               <input type="number" name="longitud" id="longitud" value="5000">
+               <span>m</span>
+           </div>
+           <div>
+               <label for="rugosidad">&#949;</label>
+               <input type="number" name="rugosidad" id="rugosidad" value="0.03">
+               <span>mm</span>
+           </div>
+           <div>
+               <label for="diferencia-carga">H</label>
+               <input type="number" name="diferencia-carga" id="diferencia-carga" value="10">
+               <span>m</span>
+           </div>
+           <div>
+               <label for="descarga"></label>
+               <input type="range" name="descarga" id="descarga" min="0" max="70" value="0" step="5">
+           </div>
+           <div>
+               <p>Q = <span id="valor-carga">0</span> l/s</p>
+           </div>
+       </div>
+       <div class="outputs">
+           <p>h<sub>f</sub> = <span id="hf"></span> m *</p>
+           <p>Power = <span id="power">0</span> kW</p>
+           <p>&eta; = <span id="eta"></span> %</p>
+           <p>Re = <span id="reynolds"></span></p>
+       </div>
+        <div class="lake"></div>
+        <div class="pipe pipe1"></div>
+        <div class="pipe pipe2"></div>
+        <div class="pipe pipe3"></div>
+        <div class="pump"></div>
+        <div class="basket"></div>
+        <div class="shower"></div>
+        <div class="manguera"></div>
+        <!-- <img src="./buket.png" alt="" class="bucket"> -->
+        <div class="divisor"></div>
+        <div class="altura"></div>
+        <div class="valor-altura">
+            <span id="valor-altura"></span>
+            <span>m</span>
+        </div>
+        <p id="rough-t">*rough turbulence assumed</p>
+   </div> 
+   <script src="./index.js"></script>
+</body>
+</html>
