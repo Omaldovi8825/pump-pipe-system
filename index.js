@@ -81,7 +81,7 @@ function perdidasTotales(){
 //calcular la potencia
 function power(){
     let Q = descargaInput.value / 1000
-    let pumpHead = perdidasTotales()
+    let pumpHead = tablaDescarga().pumpHead
     let eficiencia = tablaDescarga().eficiencia
     return (RHO * GRAVITY * Q * pumpHead / (eficiencia/100))/1000
 }
